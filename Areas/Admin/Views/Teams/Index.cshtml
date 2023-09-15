@@ -1,0 +1,49 @@
+﻿@using LawFirmTemplate.Models;
+@model List<OurTeam>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12 mb-4 order-0">
+        <div class="card">
+            <h5 class="card-header">Ekip Listesi</h5>
+            <div class="table-responsive text-nowrap">
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Id</th>
+                            <th>Ad Soyad</th>
+                            <th>Ünvan</th>
+                            <th>Resim Url</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td><strong>@item.FullName</strong></td>
+                                <td>@item.Title</td>
+                                <td>@item.Image</td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="/Admin/Teams/Edit/@item.Id"><i class="bx bx-edit-alt me-1"></i> Düzenle</a>
+                                            <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i>Sil</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,10 +1,19 @@
 using LawFirmTemplate.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>();
+builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<Context>();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Admin/Login/Login"; // Giriþ yapýlmasý gereken yol
+        options.LogoutPath = "/Admin/Login/Logout"; // Çýkýþ yapýlmasý gereken yol
+    });
 
 var app = builder.Build();
 
@@ -22,7 +31,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();    
 app.UseAuthorization();
 
 

@@ -23,7 +23,6 @@ namespace LawFirmTemplate.Models
         public string TwitterUrl { get; set; }
 
         public string LinkedinUrl { get; set; }
-
-        public int IsActive { get; set; }
+                
     }
 }

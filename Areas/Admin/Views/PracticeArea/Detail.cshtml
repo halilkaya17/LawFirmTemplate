@@ -1,38 +1,91 @@
-﻿
+﻿@using LawFirmTemplate.Models;
+@model PracticeAreas;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @{
     ViewData["Title"] = "Detail";
     Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
 }
 
 <div class="content-wrapper">
-    <!-- Content -->
-
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4">Faaliyet Alanı</h4>
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-4">
-                    <h5 class="card-header">Faaliyet Alanı</h5>
+                    <h5 class="card-header">Faaliyet Alanı Düzenleme</h5>
                     <div class="card-body">
+                        <form method="post" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Başlık</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                            <label asp-for="Id" class="form-label">Id</label>
+                                <textarea class="form-control" asp-for="Id" rows="1" readonly></textarea>
+                        </div>
+                        <div class="mb-3">
+                                <label asp-for="Title" class="form-label">Başlık</label>
+                                <textarea class="form-control" asp-for="Title" rows="1"></textarea>
                         </div>
                         <div class="mb-3">
                             <div>
-                                <label for="exampleFormControlTextarea1" class="form-label">Açıklama</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+                                    <label asp-for="Description" class="form-label">Açıklama</label>
+                                    <textarea class="form-control" asp-for="Description" rows="3"></textarea>
                             </div>
                         </div>
-                        <div class="col-6 mb-3">
-                            <label for="formFile" class="form-label">Fotoğraf Ekleyin</label>
-                            <input class="form-control" type="file" id="formFile" />
+                        <div class="mb-3">
+                            <div>
+                                <label asp-for="Paragraph1" class="form-label">Paragraf1</label>
+                                    <textarea class="form-control" asp-for="Paragraph1" rows="10"></textarea>
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <button type="button" class="btn btn-lg btn-primary mt-5 ">Değişikleri Kaydet</button>
-                            <button type="button" class="btn btn-lg btn-danger mt-5 mx-2 ">Sil</button>
+                            <div>
+                                    <label asp-for="Paragraph2" class="form-label">Paragraf2</label>
+                                    <textarea class="form-control" asp-for="Paragraph2" rows="10"></textarea>
+                            </div>
+                        </div> 
+                        <div class="mb-3">
+                            <div>
+                                    <label asp-for="Paragraph3" class="form-label">Paragraf3</label>
+                                    <textarea class="form-control" asp-for="Paragraph3" rows="10"></textarea>
+                            </div>
+                        </div> 
+                        <div class="mb-3">
+                            <div>
+                                    <label asp-for="Paragraph4" class="form-label">Paragraf4</label>
+                                    <textarea class="form-control" asp-for="Paragraph4" rows="10"></textarea>
+                            </div>
                         </div>
-
+                            <div class="mb-3">
+                                <label for="Symbol" class="form-label">Sembol</label>
+                                <div class="d-flex align-items-start align-items-sm-center gap-4">
+                                    <img src="@Model.Icon" alt="user-avatar" class="d-block rounded" height="100" width="100">
+                                    <div class="button-wrapper">
+                                        <label for="Symbol" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                            <span class="d-none d-sm-block">Sembol Ekle</span>
+                                            <i class="bx bx-upload d-block d-sm-none"></i>
+                                            <input type="file" id="Symbol" name="Symbol" class="account-file-input" hidden="" accept="image/png, image/jpeg">
+                                        </label>
+                                        <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="mb-3">
+                            <label for="Image" class="form-label">Resim</label>
+                            <div class="d-flex align-items-start align-items-sm-center gap-4">
+                                <img src="@Model.Image" alt="user-avatar" class="d-block rounded" height="300" width="300">
+                                <div class="button-wrapper">
+                                    <label for="Image" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                        <span class="d-none d-sm-block">Resim Ekle</span>
+                                        <i class="bx bx-upload d-block d-sm-none"></i>
+                                        <input type="file" id="Image" name="Image" class="account-file-input" hidden="" accept="image/png, image/jpeg">
+                                    </label>
+                                    <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-lg btn-primary mt-5 ">Değişikleri Kaydet</button>                  
+                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LawFirmTemplate.Data
 {
-    public class Context : DbContext
+    public class Context : IdentityDbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -18,5 +18,8 @@ namespace LawFirmTemplate.Data
         public DbSet<OurTeam> OurTeams { get; set; }
         public DbSet<PracticeAreas> PracticeAreas { get; set; }
         public DbSet<HomePage> HomePages { get; set; }
+        public DbSet<GeneralSetting> GeneralSettings { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
+        
     }
 }

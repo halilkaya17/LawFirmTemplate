@@ -2,9 +2,7 @@
 {
     public class HomePage
     {
-        public int Id { get; set; }
-
-        public string Slider { get; set; }
+        public int Id { get; set; }     
 
         public string OurTeamsTitle { get; set; }
 

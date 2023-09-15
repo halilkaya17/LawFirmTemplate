@@ -23,7 +23,7 @@ namespace LawFirmTemplate.Models
 
         public string Image2 { get; set; }
 
-        public string IsActive { get; set; }
+         
     }
 
 }

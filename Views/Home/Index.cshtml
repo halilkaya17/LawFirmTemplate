@@ -1,20 +1,18 @@
-﻿
+﻿@using LawFirmTemplate.ViewModels;
+@model HomeViewModel;
 @{
-	ViewData["Title"] = "Index";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
-@*SLİDER--------------------*@
 <div style=" max-width: 100%; height: auto; overflow: hidden;">
-    <img src="~/img/home_lawyer2_slider_bg.jpg" style=" width: 100%; height: auto; display: block;" />
+    <img src="@Model.Slider.Image" style=" width: 100%; height: auto; display: block;" />
 </div>
 <div class="container py-4">
     <div class="row">
         <div class="text-center mb-4">
-            <h2 class="font-weight-bold text-8 mb-3 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">Explore All Possibilities</h2>
-            <p class="line-height-9 text-4 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;"><span class="opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat id sapien ac varius. Fusce hendrerit ligula a consectetur ullamcorper. Vestibulum varius pharetra lorem, in maximus libero placerat sed.</span></p>
+            <h2 class="font-weight-bold text-8 mb-3 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">@Model.HomePage.OurTeamsTitle</h2>
+            <p class="line-height-9 text-4 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;"><span class="opacity-7">@Model.HomePage.OurTeamsDescription</span></p>
         </div>
     </div>
     <div class="row">
@@ -22,254 +20,208 @@
             <hr class="solid my-5">
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-7 order-2">
-            <div class="overflow-hidden">
-                <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">John Doe</h2>
-            </div>
-            <div class="overflow-hidden mb-3">
-                <p class="font-weight-bold text-primary text-uppercase mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="500">CEO</p>
-            </div>
-            <p class="lead appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam <a href="#">vehicula</a> sit amet enim ac sagittis. Curabitur eget leo varius, elementum mauris eget, egestas quam. Donec ante risus, dapibus sed lectus non, lacinia vestibulum nisi. Morbi vitae augue quam. Nullam ac laoreet libero.</p>
-            <p class="pb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">Consectetur adipiscing elit. Aliquam iaculis sit amet enim ac sagittis. Curabitur eget leo varius, elementum mauris eget, egestas quam.</p>
-            <hr class="solid my-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
-            <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
-                <div class="col-lg-6">
-                    <a href="#" class="btn btn-modern btn-dark mt-3">Get In Touch</a>
-                    <a href="#" class="btn btn-modern btn-primary mt-3">Hire Me</a>
+    @foreach (var item in Model.OurTeams)
+    {
+        if (item.Id % 2 == 1)
+        {
+            <div class="row">
+                <div class="col-md-7 order-2">
+                    <div class="overflow-hidden">
+                        <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">@item.FullName</h2>
+                    </div>
+                    <div class="overflow-hidden mb-3">
+                        <p class="font-weight-bold text-primary text-uppercase mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="500">@item.Title</p>
+                    </div>
+                    <p class="lead appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">@item.PreDescription</p>
+                    <p class="pb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">@item.Description</p>
+                    <hr class="solid my-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
+                    <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
+                        <div class="col-sm-6 text-lg-right my-4 my-lg-0">
+                            <strong class="text-uppercase text-1 mr-3 text-dark">follow me</strong>
+                            <ul class="social-icons float-lg-right">
+                                <li class="social-icons-facebook"><a href="@item.FacebookUrl" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="social-icons-twitter"><a href="@item.TwitterUrl" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li class="social-icons-linkedin"><a href="@item.LinkedinUrl" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-6 text-lg-right my-4 my-lg-0">
-                    <strong class="text-uppercase text-1 mr-3 text-dark">follow me</strong>
-                    <ul class="social-icons float-lg-right">
-                        <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                        <li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                        <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-5 order-md-2 mb-4 mb-lg-0 appear-animation" data-appear-animation="fadeInRightShorter">
-            <img src="~/img/team/team-1.jpg" class="img-fluid" alt="">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <hr class="solid my-5">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-5 order-md-2 mb-4 mb-lg-0 appear-animation" data-appear-animation="fadeInLeftShorter">
-            <img src="img/team/team-2.jpg" class="img-fluid" alt="">
-        </div>
-        <div class="col-md-7 order-2">
-            <div class="overflow-hidden">
-                <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">Jessica Doe</h2>
-            </div>
-            <div class="overflow-hidden mb-3">
-                <p class="font-weight-bold text-primary text-uppercase mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="500">Marketing</p>
-            </div>
-            <p class="lead appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam <a href="#">vehicula</a> sit amet enim ac sagittis. Curabitur eget leo varius, elementum mauris eget, egestas quam. Donec ante risus, dapibus sed lectus non, lacinia vestibulum nisi. Morbi vitae augue quam. Nullam ac laoreet libero.</p>
-            <p class="pb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">Consectetur adipiscing elit. Aliquam iaculis sit amet enim ac sagittis. Curabitur eget leo varius, elementum mauris eget, egestas quam.</p>
-            <hr class="solid my-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
-            <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
-                <div class="col-lg-6">
-                    <a href="#" class="btn btn-modern btn-dark mt-3">Get In Touch</a>
-                    <a href="#" class="btn btn-modern btn-primary mt-3">Hire Me</a>
-                </div>
-                <div class="col-sm-6 text-lg-right my-4 my-lg-0">
-                    <strong class="text-uppercase text-1 mr-3 text-dark">follow me</strong>
-                    <ul class="social-icons float-lg-right">
-                        <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                        <li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                        <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-                    </ul>
+                <div class="col-md-5 order-md-2 mb-4 mb-lg-0 appear-animation" data-appear-animation="fadeInRightShorter">
+                    <img src="@item.Image" class="img-fluid" alt="">
                 </div>
             </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-md-5 order-md-2 mb-4 mb-lg-0 appear-animation" data-appear-animation="fadeInLeftShorter">
+                    <img src="@item.Image" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-7 order-2">
+                    <div class="overflow-hidden">
+                        <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="300">@item.FullName</h2>
+                    </div>
+                    <div class="overflow-hidden mb-3">
+                        <p class="font-weight-bold text-primary text-uppercase mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="500">@item.Title</p>
+                    </div>
+                    <p class="lead appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">@item.PreDescription</p>
+                    <p class="pb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">@item.Description</p>
+                    <hr class="solid my-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
+                    <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1000">
+                        <div class="col-sm-6 text-lg-right my-4 my-lg-0">
+                            <strong class="text-uppercase text-1 mr-3 text-dark">Takip edin</strong>
+                            <ul class="social-icons float-lg-right">
+                                <li class="social-icons-facebook"><a href="@item.FacebookUrl" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="social-icons-twitter"><a href="@item.FacebookUrl" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li class="social-icons-linkedin"><a href="@item.FacebookUrl" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="row">
+            <div class="col">
+                <hr class="solid my-5">
+            </div>
         </div>
-    </div>
+    }
 </div>
 <div role="main" class="main color-1">
     <div class="container container-lg-custom py-5 my-5">
         <div class="row justify-content-center">
             <div class="col-xl-8 text-center mb-4">
-                <h2 class="font-weight-bold text-8 mb-3 appear-animation animated fadeIn appear-animation-visible color-5" data-appear-animation="fadeIn" style="animation-delay: 100ms;">Explore All Possibilities</h2>
-                <p class="line-height-9 text-4 appear-animation animated fadeInUpShorter appear-animation-visible color-4" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;"><span class="opacity-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras volutpat id sapien ac varius. Fusce hendrerit ligula a consectetur ullamcorper. Vestibulum varius pharetra lorem, in maximus libero placerat sed.</span></p>
+                <h2 class="font-weight-bold text-8 mb-3 appear-animation animated fadeIn appear-animation-visible color-5" data-appear-animation="fadeIn" style="animation-delay: 100ms;">@Model.HomePage.PracticeAreasTitle</h2>
+                <p class="line-height-9 text-4 appear-animation animated fadeInUpShorter appear-animation-visible color-4" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;"><span class="opacity-7">@Model.HomePage.PracticeAreasDescpiption</span></p>
             </div>
         </div>
 
         <div class="row justify-content-center">
 
             <div class="row">
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
-                    <div class="card flip-card text-center rounded-0 color-1">
-                        <div class="flip-front p-5 ">
-                            <div class="flip-content my-4">
-                                <strong class="font-weight-extra-bold text-color-dark line-height-1 text-13 mb-3 d-inline-block"><img src="~/img/law-icons/icon-is_hukuku.png" /></strong>
-                                <h4 class="font-weight-bold text-color-primary text-4">İŞ HUKUKU</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius.</p>
+
+                @foreach (var item in Model.PracticeAreas)
+                {
+
+                    <div class="col-md-6 col-lg-4 mb-5 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
+                        <div class="card flip-card text-center rounded-0 color-1">
+                            <div class="flip-front p-5 ">
+                                <div class="flip-content my-4">
+                                    <strong class="font-weight-extra-bold text-color-dark line-height-1 text-13 mb-3 d-inline-block"><img src="@item.Icon" /></strong>
+                                    <h4 class="font-weight-bold text-color-primary text-4">@item.Title</h4>
+                                    <p>@item.Description</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('https://images.unsplash.com/photo-1682687982185-531d09ec56fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
-                            <div class="flip-content my-4">
-                                <div><a href="#" class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
-                    <div class="card flip-card text-center rounded-0 color-1">
-                        <div class="flip-front p-5 ">
-                            <div class="flip-content my-4">
-                                <strong class="font-weight-extra-bold text-color-dark line-height-1 text-13 mb-3 d-inline-block"><img src="~/img/law-icons/icon-is_hukuku.png" /></strong>
-                                <h4 class="font-weight-bold text-color-primary text-4">İŞ HUKUKU</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius.</p>
-                            </div>
-                        </div>
-                        <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('https://images.unsplash.com/photo-1682687982185-531d09ec56fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
-                            <div class="flip-content my-4">
-                                <div><a href="#" class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
+                            <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('@item.Image'); background-size: cover; background-position: center;">
+                                <div class="flip-content my-4">
+                                    <div><a href="/PracticeAreas/Detail/@item.Id " class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
-                    <div class="card flip-card text-center rounded-0 color-1">
-                        <div class="flip-front p-5 ">
-                            <div class="flip-content my-4">
-                                <strong class="font-weight-extra-bold text-color-dark line-height-1 text-13 mb-3 d-inline-block"><img src="~/img/law-icons/icon-is_hukuku.png" /></strong>
-                                <h4 class="font-weight-bold text-color-primary text-4">İŞ HUKUKU</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius.</p>
-                            </div>
-                        </div>
-                        <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('https://images.unsplash.com/photo-1682687982185-531d09ec56fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
-                            <div class="flip-content my-4">
-                                <div><a href="#" class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
 
-            <div class="row mt-5">
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
-                    <div class="card flip-card text-center rounded-0 color-1">
-                        <div class="flip-front p-5 ">
-                            <div class="flip-content my-4">
-                                <strong class="font-weight-extra-bold text-color-dark line-height-1 text-13 mb-3 d-inline-block"><img src="~/img/law-icons/icon-is_hukuku.png" /></strong>
-                                <h4 class="font-weight-bold text-color-primary text-4">İŞ HUKUKU</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius.</p>
-                            </div>
-                        </div>
-                        <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('https://images.unsplash.com/photo-1682687982185-531d09ec56fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
-                            <div class="flip-content my-4">
-                                <div><a href="#" class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
-                    <div class="card flip-card text-center rounded-0 color-1">
-                        <div class="flip-front p-5 ">
-                            <div class="flip-content my-4">
-                                <strong class="font-weight-extra-bold text-color-dark line-height-1 text-13 mb-3 d-inline-block"><img src="~/img/law-icons/icon-is_hukuku.png" /></strong>
-                                <h4 class="font-weight-bold text-color-primary text-4">İŞ HUKUKU</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius.</p>
-                            </div>
-                        </div>
-                        <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('https://images.unsplash.com/photo-1682687982185-531d09ec56fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
-                            <div class="flip-content my-4">
-                                <div><a href="#" class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
-                    <div class="card flip-card text-center rounded-0 color-1">
-                        <div class="flip-front p-5 ">
-                            <div class="flip-content my-4">
-                                <strong class="font-weight-extra-bold text-color-dark line-height-1 text-13 mb-3 d-inline-block"><img src="~/img/law-icons/icon-is_hukuku.png" /></strong>
-                                <h4 class="font-weight-bold text-color-primary text-4">İŞ HUKUKU</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius.</p>
-                            </div>
-                        </div>
-                        <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('https://images.unsplash.com/photo-1682687982185-531d09ec56fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
-                            <div class="flip-content my-4">
-                                <div><a href="#" class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
+            @* <div class="row mt-5">
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
+            <div class="card flip-card text-center rounded-0 color-1">
+            <div class="flip-front p-5 ">
+            <div class="flip-content my-4">
+            <strong class="font-weight-extra-bold text-color-dark line-height-1 text-13 mb-3 d-inline-block"><img src="~/img/law-icons/icon-is_hukuku.png" /></strong>
+            <h4 class="font-weight-bold text-color-primary text-4">İŞ HUKUKU</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius.</p>
             </div>
+            </div>
+            <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('https://images.unsplash.com/photo-1682687982185-531d09ec56fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
+            <div class="flip-content my-4">
+            <div><a href="#" class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
+            <div class="card flip-card text-center rounded-0 color-1">
+            <div class="flip-front p-5 ">
+            <div class="flip-content my-4">
+            <strong class="font-weight-extra-bold text-color-dark line-height-1 text-13 mb-3 d-inline-block"><img src="~/img/law-icons/icon-is_hukuku.png" /></strong>
+            <h4 class="font-weight-bold text-color-primary text-4">İŞ HUKUKU</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius.</p>
+            </div>
+            </div>
+            <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('https://images.unsplash.com/photo-1682687982185-531d09ec56fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
+            <div class="flip-content my-4">
+            <div><a href="#" class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
+            <div class="card flip-card text-center rounded-0 color-1">
+            <div class="flip-front p-5 ">
+            <div class="flip-content my-4">
+            <strong class="font-weight-extra-bold text-color-dark line-height-1 text-13 mb-3 d-inline-block"><img src="~/img/law-icons/icon-is_hukuku.png" /></strong>
+            <h4 class="font-weight-bold text-color-primary text-4">İŞ HUKUKU</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius.</p>
+            </div>
+            </div>
+            <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('https://images.unsplash.com/photo-1682687982185-531d09ec56fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
+            <div class="flip-content my-4">
+            <div><a href="#" class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>*@
+
         </div>
+
     </div>
+
+
+
+
+
+
     <section class="section section-height-3 bg-color-grey-scale-1 section-no-border m-0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="font-weight-normal text-6 mb-5">Our <strong class="font-weight-extra-bold">Blog</strong></h2>
+                    <h2 class="font-weight-normal text-6 mb-5"><strong class="font-weight-extra-bold">@Model.HomePage.ArticlesTitle</strong></h2>
                 </div>
             </div>
+
+
+
+
+
             <div class="row py-3 justify-content-center">
-                <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
-                    <article>
-                        <div class="row">
-                            <div class="col">
-                                <a href="#" class="text-decoration-none">
-                                    <img src="https://images.unsplash.com/photo-1694059243915-8a6580c3c111?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" class="img-fluid hover-effect-2 mb-3" alt="">
-                                </a>
+                @foreach (var item in Model.Articles.Take(3))
+                {
+                    <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" style="animation-delay: 100ms;">
+                        <article>
+                            <div class="row">
+                                <div class="col">
+                                    <a href="#" class="text-decoration-none">
+                                        <img src="@item.CardImage" class="img-fluid hover-effect-2 mb-3" alt="">
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <h4 class="mb-0"><a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">Mobile Apps</a></h4>
-                                <p class="mb-2 lead text-4">Lorem ipsum dolor sit amet, coctetur adipiscing elit.</p>
-                                <p class="text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla non metus pulvinar.</p>
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="mb-0"><a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">@item.Title</a></h4>
+                                    <p class="mb-2 lead text-4">@item.CardDescription</p>
+                                    <p class="text-2">@item.CardDescription</p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-8 col-md-4 mb-4 mb-md-0 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="250" style="animation-delay: 250ms;">
-                    <article>
-                        <div class="row">
-                            <div class="col">
-                                <a href="#" class="text-decoration-none">
-                                    <img src="https://images.unsplash.com/photo-1694059243915-8a6580c3c111?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" class="img-fluid hover-effect-2 mb-3" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <h4 class="mb-0"><a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">Creative Websites</a></h4>
-                                <p class="mb-2 lead text-4">Lorem ipsum dolor sit amet, coctetur adipiscing elit.</p>
-                                <p class="text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla non metus pulvinar.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-sm-8 col-md-4 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="500" style="animation-delay: 500ms;">
-                    <article>
-                        <div class="row">
-                            <div class="col">
-                                <a href="#" class="text-decoration-none">
-                                    <img src="https://images.unsplash.com/photo-1694059243915-8a6580c3c111?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" class="img-fluid hover-effect-2 mb-3" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <h4 class="mb-0"><a href="#" class="text-2 text-uppercase font-weight-bold pt-2 d-block text-dark text-decoration-none">SEO Optimization</a></h4>
-                                <p class="mb-2 lead text-4">Lorem ipsum dolor sit amet, coctetur adipiscing elit.</p>
-                                <p class="text-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla non metus pulvinar.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                        </article>
+                    </div>
+                }
             </div>
             <div class="row mb-5">
                 <div class="col-lg-12 text-center">
-                    <a href="#" class="btn btn-dark btn-px-5 btn-py-2 font-weight-bold text-color-light rounded-0 text-2">VIEW BLOG</a>
+                    <a href="/Articles/Index" class="btn btn-dark btn-px-5 btn-py-2 font-weight-bold text-color-light rounded-0 text-2">Devamını Oku</a>
                 </div>
             </div>
         </div>

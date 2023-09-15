@@ -1,149 +1,49 @@
-﻿
+﻿@using LawFirmTemplate.Models;
+@model List<Article>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
 }
 
-<div class="content-wrapper">
-    <!-- Content -->
-
-    <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4">Makaleler</h4>
-        <!-- Examples -->
-        <div class="row mb-5">
-            <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card h-100">
-                    <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                        <div class="row">
-                            <div class="col-6 align-item-center">
-                                <a href="/Article/Edit" class="btn btn-primary ">Düzenle</a>
-                            </div>
-                            <div class="col-6 justify-content-center">
-                                <div class="form-check form-switch mb-2 ">
-                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
-                                    <label class="form-check-label" for="flexSwitchCheckChecked">Pasif/Aktif</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card h-100">
-                    <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                        <div class="row">
-                            <div class="col-6 justify-content-center">
-                                <a href="/Admin/Article/Edit" class="btn btn-primary ">Düzenle</a>
-                            </div>
-                            <div class="col-6 justify-content-center">
-                                <div class="form-check form-switch mb-2 ">
-                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
-                                    <label class="form-check-label" for="flexSwitchCheckChecked">Pasif/Aktif</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card h-100">
-                    <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                        <div class="row">
-                            <div class="col-6 justify-content-center">
-                                <a href="javascript:void(0)" class="btn btn-primary ">Düzenle</a>
-                            </div>
-                            <div class="col-6 justify-content-center">
-                                <div class="form-check form-switch mb-2 ">
-                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
-                                    <label class="form-check-label" for="flexSwitchCheckChecked">Pasif/Aktif</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card h-100">
-                    <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                        <div class="row">
-                            <div class="col-6 justify-content-center">
-                                <a href="javascript:void(0)" class="btn btn-primary ">Düzenle</a>
-                            </div>
-                            <div class="col-6 justify-content-center">
-                                <div class="form-check form-switch mb-2 ">
-                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
-                                    <label class="form-check-label" for="flexSwitchCheckChecked">Pasif/Aktif</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card h-100">
-                    <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                        <div class="row">
-                            <div class="col-6 justify-content-center">
-                                <a href="javascript:void(0)" class="btn btn-primary ">Düzenle</a>
-                            </div>
-                            <div class="col-6 justify-content-center">
-                                <div class="form-check form-switch mb-2 ">
-                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
-                                    <label class="form-check-label" for="flexSwitchCheckChecked">Pasif/Aktif</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card h-100">
-                    <img class="card-img-top" src="../assets/img/elements/2.jpg" alt="Card image cap" />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                        <div class="row">
-                            <div class="col-6 justify-content-center">
-                                <a href="javascript:void(0)" class="btn btn-primary ">Düzenle</a>
-                            </div>
-                            <div class="col-6 justify-content-center">
-                                <div class="form-check form-switch mb-2 ">
-                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
-                                    <label class="form-check-label" for="flexSwitchCheckChecked">Pasif/Aktif</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="row">
+    <div class="col-lg-12 mb-4 order-0">
+        <div class="card">
+            <h5 class="card-header">Makale Listesi</h5>
+            <div class="table-responsive text-nowrap">
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Makale Adı</th>
+                            <th>Makale Açıklama</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td><strong>@item.Title</strong></td>
+                                <td>@item.CardDescription</td>
+                                <td><span class="badge bg-label-primary me-1">Active</span></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                            <i class="bx bx-dots-vertical-rounded"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="/Admin/Article/Edit/@item.Id"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                                            <a class="dropdown-item" href="/Admin/Article/Delete/@item.Id"><i class="bx bx-trash me-1"></i> Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
+
 

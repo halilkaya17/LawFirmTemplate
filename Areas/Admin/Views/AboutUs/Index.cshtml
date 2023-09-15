@@ -1,4 +1,6 @@
-﻿
+﻿@using LawFirmTemplate.Models;
+@model AboutUs;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
@@ -8,44 +10,72 @@
     <!-- Content -->
 
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4">Hakkımızda</h4>
+        <h4 class="fw-bold py-3 mb-4">Hakkımızda Düzenle</h4>
         <div class="row">
             <div class="col-md-12">
                 <div class="card mb-4">
-                    <h5 class="card-header">Başlık</h5>
-                    <div class="card-body">
-                        <div>
-                            <input type="text"
-                                   class="form-control"
-                                   id="defaultFormControlInput"
-                                   placeholder="Başlık"
-                                   aria-describedby="defaultFormControlHelp" />
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-4">
-                    <h5 class="card-header">Ön Açıklama</h5>
-                    <div class="card-body">
-                        <div>
-                            <div>
-                                <label for="exampleFormControlTextarea1" class="form-label">Ön Açıklama</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <h5 class="card-header">Hakkımızda</h5>
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label asp-for="Id" class="form-label">Id</label>
+                                <textarea class="form-control" asp-for="Id" rows="1" readonly></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Title" class="form-label">Başlık</label>
+                                <textarea class="form-control" asp-for="Title" rows="1"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <div>
+                                    <label asp-for="Paragraph1" class="form-label">Paragraf1</label>
+                                    <textarea class="form-control" asp-for="Paragraph1" rows="3"></textarea>
+                                </div>
+                                <div>
+                                    <label asp-for="Paragraph2" class="form-label">Paragraf2</label>
+                                    <textarea class="form-control" asp-for="Paragraph2" rows="3"></textarea>
+                                </div>
+                                <div>
+                                    <label asp-for="Paragraph3" class="form-label">Paragraf3</label>
+                                    <textarea class="form-control" asp-for="Paragraph3" rows="3"></textarea>
+                                </div>
+                                <div>
+                                    <label asp-for="Paragraph4" class="form-label">Paragraf4</label>
+                                    <textarea class="form-control" asp-for="Paragraph4" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Image1" class="form-label">Kart Resmi</label>
+                                <div class="d-flex align-items-start align-items-sm-center gap-4">
+                                    <img src="@Model.Image1" alt="user-avatar" class="d-block rounded" height="300" width="300">
+                                    <div class="button-wrapper">
+                                        <label for="Image1" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                            <span class="d-none d-sm-block">Resim Ekle</span>
+                                            <i class="bx bx-upload d-block d-sm-none"></i>
+                                            <input type="file" id="Image1" name="Image1" class="account-file-input" hidden="" accept="image/png, image/jpeg">
+                                        </label>
+                                        <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Image2" class="form-label">Resim Ekle</label>
+                                <div class="d-flex align-items-start align-items-sm-center gap-4">
+                                    <img src="@Model.Image2" alt="user-avatar" class="d-block rounded" height="300" width="300">
+                                    <div class="button-wrapper">
+                                        <label for="Image2" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                            <span class="d-none d-sm-block">Resim Ekle</span>
+                                            <i class="bx bx-upload d-block d-sm-none"></i>
+                                            <input type="file" id="Image2" name="Image2" class="account-file-input" hidden="" accept="image/png, image/jpeg">
+                                        </label>
+                                        <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                                    </div>
+                                </div>
+                            </div>                           
+                            <div class="mb-3">
+                                <button type="submit" class="btn btn-lg btn-primary mt-5 ">Değişikleri Kaydet</button>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="card mb-4">
-                    <h5 class="card-header">Açıklama</h5>
-                    <div class="card-body">
-                        <div>
-                            <div>
-                                <label for="exampleFormControlTextarea1" class="form-label">Açıklama</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-lg btn-primary mt-5 justify-content-end">Değişikleri Kaydet</button>
-
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
