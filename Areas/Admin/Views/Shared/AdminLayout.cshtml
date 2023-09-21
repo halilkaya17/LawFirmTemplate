@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -46,6 +45,9 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="~/Admin/assets/js/config.js"></script>
+
+    <script src="https://cdn.ckeditor.com/4.14.0/full/ckeditor.js"></script>
+
 </head>
 
 <body>
@@ -55,9 +57,9 @@
             <!-- Menu -->
 
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-              
+
                 <div class="app-brand justify-content-center">
-                    <a href="index.html">
+                    <a href="#">
                         <img alt="Porto" width="270" height="72" src="~/img/Avukat logo.png" style="margin-top: 20px; width: 210px; height: 56px;">
                     </a>
                 </div>
@@ -72,7 +74,7 @@
                             <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
                             <div data-i18n="Authentications">Dashboard</div>
                         </a>
-                    </li>    
+                    </li>
                     <li class="menu-item">
                         <a href="/Admin/HomePage/Index" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
@@ -89,12 +91,12 @@
                                 <a href="/Admin/SiteSettings/GeneralSettings" class="menu-link">
                                     <div data-i18n="Account">Genel Ayarlar</div>
                                 </a>
-                            </li>                      
-                             <li class="menu-item">
+                            </li>
+                            <li class="menu-item">
                                 <a href="/Admin/SiteSettings/ContactSettings" class="menu-link">
                                     <div data-i18n="Connections">İletişim Ayarları </div>
                                 </a>
-                            </li>                       
+                            </li>
                         </ul>
                     </li>
                     <li class="menu-item">
@@ -118,7 +120,7 @@
                                 <a href="/Admin/PracticeArea/Index" class="menu-link">
                                     <div data-i18n="Notifications">Faaliyet Alanları</div>
                                 </a>
-                            </li>                           
+                            </li>
                         </ul>
                     </li>
                     <li class="menu-item">
@@ -149,7 +151,7 @@
                                 <a href="/Admin/Slider/Index" class="menu-link">
                                     <div data-i18n="Account">Slider Düzenle</div>
                                 </a>
-                            </li>                           
+                            </li>
                         </ul>
                     </li>
                     <li class="menu-item">
@@ -171,26 +173,26 @@
                         </ul>
                     </li>
                     <!-- Kullanıcı İşlemleri -->
-                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Yönetici İşlemleri</span></li>               
+                    <li class="menu-header small text-uppercase"><span class="menu-header-text">Yönetici İşlemleri</span></li>
                     <li class="menu-item">
                         <a href="/Admin/Register/Index" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-support"></i>
                             <div data-i18n="Documentation">Yeni Yönetici Ekle</div>
                         </a>
                     </li>
-                    <li class="menu-item">
-                        <a href="/Admin/Message/Index" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-support"></i>
-                            <div data-i18n="Documentation">Mesajlar</div>
-                        </a>
-                    </li>
+                    @* <li class="menu-item">
+                    <a href="/Admin/Message/Index" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-support"></i>
+                    <div data-i18n="Documentation">Mesajlar</div>
+                    </a>
+                    </li>*@
                     <li class="menu-item">
                         <a asp-controller="Login" asp-action="LogOut" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-file"></i>
                             <div data-i18n="Documentation">Çıkış Yap</div>
                         </a>
                     </li>
-                    
+
                 </ul>
             </aside>
             <!-- / Menu -->
@@ -234,7 +236,7 @@
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
-                                        <img src="~/Admin/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                        <img src="~/Admin/assets/img/avatars/1.png" class="w-px-40 h-auto rounded-circle" />
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end">
@@ -243,7 +245,7 @@
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
-                                                        <img src="~/Admin/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                        <img src="~/Admin/assets/img/avatars/1.png" class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
@@ -315,6 +317,8 @@
         <!-- Overlay -->
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
+
+
     <!-- / Layout wrapper -->
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -336,6 +340,11 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <script type="text/javascript">
+        CKEDITOR.replace('Paragraph1');
+        CKEDITOR.replace('Paragraph2');
+    </script>
 </body>
 </html>
 

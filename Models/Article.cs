@@ -17,14 +17,6 @@ namespace LawFirmTemplate.Models
         public string FullImage { get; set; }
 
         public string Paragraph1 { get; set; }
-
-        public string Paragraph2 { get; set; }
-
-        public string Paragraph3 { get; set; }
-
-        public string Paragraph4 { get; set; }
-
-        public string Paragraph5 { get; set; }     
-
+       
     }
 }

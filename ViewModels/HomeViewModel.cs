@@ -14,7 +14,7 @@ namespace LawFirmTemplate.ViewModels
 
         public Slider Slider { get; set; }
 
-
+        public GeneralSetting  GeneralSetting { get; set; }
 
     }
 }

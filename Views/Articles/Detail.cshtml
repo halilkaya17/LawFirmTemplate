@@ -40,11 +40,7 @@
                         </div>
                         <div class="post-content ml-0">
                             <h2 class="font-weight-bold">@Model.Title</h2>
-                            <p>@Model.Paragraph1</p>
-                            <p>@Model.Paragraph2</p>
-                            <p>@Model.Paragraph3</p>
-                            <p>@Model.Paragraph4</p>
-                            <p>@Model.Paragraph5</p>            
+                            <p>@Html.Raw(Model.Paragraph1)</p>
                         </div>
                     </article>
                 </div>

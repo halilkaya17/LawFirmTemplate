@@ -95,14 +95,10 @@
                 <p class="line-height-9 text-4 appear-animation animated fadeInUpShorter appear-animation-visible color-4" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;"><span class="opacity-7">@Model.HomePage.PracticeAreasDescpiption</span></p>
             </div>
         </div>
-
         <div class="row justify-content-center">
-
             <div class="row">
-
                 @foreach (var item in Model.PracticeAreas)
                 {
-
                     <div class="col-md-6 col-lg-4 mb-5 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
                         <div class="card flip-card text-center rounded-0 color-1">
                             <div class="flip-front p-5 ">
@@ -114,76 +110,15 @@
                             </div>
                             <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('@item.Image'); background-size: cover; background-position: center;">
                                 <div class="flip-content my-4">
-                                    <div><a href="/PracticeAreas/Detail/@item.Id " class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
+                                    <div><a href="/PracticeAreas/Detail/@item.Id " class="btn color-2 btn-modern text-color-white font-weight-bold">DEVAMINI OKU</a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 }
-            </div>
-
-
-
-            @* <div class="row mt-5">
-            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
-            <div class="card flip-card text-center rounded-0 color-1">
-            <div class="flip-front p-5 ">
-            <div class="flip-content my-4">
-            <strong class="font-weight-extra-bold text-color-dark line-height-1 text-13 mb-3 d-inline-block"><img src="~/img/law-icons/icon-is_hukuku.png" /></strong>
-            <h4 class="font-weight-bold text-color-primary text-4">İŞ HUKUKU</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius.</p>
-            </div>
-            </div>
-            <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('https://images.unsplash.com/photo-1682687982185-531d09ec56fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
-            <div class="flip-content my-4">
-            <div><a href="#" class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
-            </div>
-            </div>
-            </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
-            <div class="card flip-card text-center rounded-0 color-1">
-            <div class="flip-front p-5 ">
-            <div class="flip-content my-4">
-            <strong class="font-weight-extra-bold text-color-dark line-height-1 text-13 mb-3 d-inline-block"><img src="~/img/law-icons/icon-is_hukuku.png" /></strong>
-            <h4 class="font-weight-bold text-color-primary text-4">İŞ HUKUKU</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius.</p>
-            </div>
-            </div>
-            <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('https://images.unsplash.com/photo-1682687982185-531d09ec56fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
-            <div class="flip-content my-4">
-            <div><a href="#" class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
-            </div>
-            </div>
-            </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible " data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
-            <div class="card flip-card text-center rounded-0 color-1">
-            <div class="flip-front p-5 ">
-            <div class="flip-content my-4">
-            <strong class="font-weight-extra-bold text-color-dark line-height-1 text-13 mb-3 d-inline-block"><img src="~/img/law-icons/icon-is_hukuku.png" /></strong>
-            <h4 class="font-weight-bold text-color-primary text-4">İŞ HUKUKU</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius.</p>
-            </div>
-            </div>
-            <div class="flip-back d-flex justify-content-center align-items-end p-5 color-2" style="background-image: url('https://images.unsplash.com/photo-1682687982185-531d09ec56fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); background-size: cover; background-position: center;">
-            <div class="flip-content my-4">
-            <div><a href="#" class="btn color-2 btn-modern text-color-dark font-weight-bold">DEVAMINI OKU</a></div>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>*@
-
+            </div>          
         </div>
-
     </div>
-
-
-
-
-
-
     <section class="section section-height-3 bg-color-grey-scale-1 section-no-border m-0">
         <div class="container">
             <div class="row">
@@ -191,11 +126,6 @@
                     <h2 class="font-weight-normal text-6 mb-5"><strong class="font-weight-extra-bold">@Model.HomePage.ArticlesTitle</strong></h2>
                 </div>
             </div>
-
-
-
-
-
             <div class="row py-3 justify-content-center">
                 @foreach (var item in Model.Articles.Take(3))
                 {
@@ -203,7 +133,7 @@
                         <article>
                             <div class="row">
                                 <div class="col">
-                                    <a href="#" class="text-decoration-none">
+                                    <a href="/Articles/Detail/@item.Id" class="text-decoration-none">
                                         <img src="@item.CardImage" class="img-fluid hover-effect-2 mb-3" alt="">
                                     </a>
                                 </div>

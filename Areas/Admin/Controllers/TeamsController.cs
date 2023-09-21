@@ -96,6 +96,12 @@ namespace LawFirmTemplate.Areas.Admin.Controllers
                 // Dosyanın kaydedileceği dizini belirleyin (örnek olarak wwwroot/UI/Team)
                 string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "UI", "OurTeam");
 
+
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
                 // Dosya adını ve yolunu oluşturun
                 string uniqueFileName = Guid.NewGuid().ToString() + "_" + Image.FileName;
                 string filePath = Path.Combine(uploadsFolder, uniqueFileName);

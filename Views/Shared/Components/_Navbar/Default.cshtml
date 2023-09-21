@@ -1,0 +1,77 @@
+﻿@using LawFirmTemplate.Models;
+@model GeneralSetting;
+
+
+<header id="header" class="header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
+    <div class="header-body header-body-bottom-border border-top-0">
+        <div class="header-container container" style="height: 130px;">
+            <div class="header-row">
+                <div class="header-column">
+                    <div class="header-row">
+                        <h1 class="header-logo">
+                            <a href="/Home/Index">
+                                <img alt="Porto" width="270" height="72" data-sticky-width="210" data-sticky-height="56" src="@Model.LogoLight" style="top: 0px; width: 270px; height: 72px;">
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+                <div class="header-column justify-content-end">
+                    <div class="header-row">
+                        <div class="header-nav header-nav-line header-nav-bottom-line header-nav-bottom-line-effect-1">
+                            <div class="header-nav-main header-nav-main-square header-nav-main-font-lg header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
+                                <nav class="collapse">
+                                    <ul class="nav nav-pills" id="mainNav">
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="/Home/Index">
+                                                Anasayfa
+                                            </a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="/AboutUs/Index">
+                                                Hakkımızda
+                                            </a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="/OurTeam/Index">
+                                                Ekibimiz
+                                            </a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="/PracticeAreas/Index">
+                                                Faaliyet Alanlarımız
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="/PracticeAreas/Detail/1">İş Hukuku</a></li>
+                                                <li><a class="dropdown-item" href="/PracticeAreas/Detail/13">Aile Hukuku</a></li>
+                                                <li><a class="dropdown-item" href="/PracticeAreas/Detail/14">Bilişim Hukuku</a></li>
+                                                <li><a class="dropdown-item" href="/PracticeAreas/Detail/15">Ticaret Hukuku</a></li>
+                                                <li><a class="dropdown-item" href="/PracticeAreas/Detail/16">Ceza Hukuku</a></li>
+                                                <li><a class="dropdown-item" href="/PracticeAreas/Detail/17">Şirketler Hukuku</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="/Articles/Index">
+                                                Makaleler
+                                            </a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a class="dropdown-item dropdown-toggle" href="/ContactUs/Index">
+                                                İletişim
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <button class="btn header-btn-collapse-nav color-3" data-toggle="collapse" data-target=".header-nav-main nav">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+

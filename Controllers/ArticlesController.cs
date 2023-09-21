@@ -18,17 +18,14 @@ namespace LawFirmTemplate.Controllers
             var values = _context.Articles.ToList();
             return View(values);
         }
-
         
-		public IActionResult Detail(int id)
-		{
-            var allArticles = _context.PracticeAreas.ToList();
-
-            var Article = allArticles.FirstOrDefault(x => x.Id == id);
+        public IActionResult Detail(int id)
+		{            
+            var Article = _context.Articles.FirstOrDefault(x => x.Id == id);
 
             if (Article == null)
             {
-                return NotFound(); // Belirtilen Id ile bir ekip üyesi bulunamadıysa hata döndürün.
+                return View("Index"); // Belirtilen Id ile bir ekip üyesi bulunamadıysa hata döndürün.
             }
 
             return View(Article);
